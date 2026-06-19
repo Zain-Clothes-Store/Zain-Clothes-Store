@@ -1,0 +1,138 @@
+/* Fonts */
+@font-face {
+  font-family: 'leet';
+  src: url('./normal.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./vt323.ttf') format('truetype');
+}
+
+/* General Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: black url('./bg-noise.png') repeat;
+  color: #e00000;
+  font-family: 'VT323', monospace;
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  padding: 20px;
+  background-image: url('./line.png');
+}
+
+pre {
+  text-shadow: 0 0 10px #cfb53f, 0 0 20px #fcfcfc;
+  color: #b4a044;
+}
+
+/* Highlight text on selection */
+::selection {
+  background: #e00000;
+  color: black;
+}
+::-moz-selection {
+  background: #e00000;
+}
+
+/* Sections */
+.logo-area {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.logo-area-quote {
+  font-size: 20px;
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+
+.white {
+  color: #e6e6e6;
+}
+
+.magenta {
+  color: #d76f30;
+}
+
+/* Footer */
+.error {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px 5px;
+  border: 2px solid #ffffff;
+  border-radius: 18px;
+  background: rgba(80, 80, 80, 0.5);
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  box-shadow: 0 0 10px #b4a044;
+}
+
+/* Navigation */
+
+.navbar {
+  position: fixed;
+  top: 15px;
+  left: 20px;
+
+  display: flex;
+  gap: 20px;
+
+  padding: 10px 15px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(190, 167, 60, 0.4);
+  border-radius: 10px;
+
+  z-index: 9999;
+}
+
+.navbar a {
+  color: #bea73c;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px #cfb53f;
+}
+
+/* Popup */
+
+.popup {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: rgba(0, 0, 0, 0.95);
+  color: #fff;
+  border: 2px solid #bea73c;
+  border-radius: 12px;
+  padding: 15px 20px;
+  font-size: 18px;
+  box-shadow: 0 0 20px rgba(190, 167, 60, 0.5);
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all .3s ease;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.popup.show {
+  opacity: 1;
+  transform: translateY(0);
+}
